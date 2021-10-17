@@ -7,7 +7,7 @@ require("dotenv").config();
 const app = express();
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com", //email provider
+  host: "smtp.live.com", //email provider
   port: 587,
   // SMTP port 587 is one of the best choices for nearly every use case for connecting to Pepipost
   // Port 25 is the default port used for relaying
