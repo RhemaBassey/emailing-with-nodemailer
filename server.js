@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
   host: "smtp.live.com", //email provider
   port: 587,
   // SMTP port 587 is one of the best choices for nearly every use case for connecting to Pepipost
-  // Port 25 is the default port used for relaying
+  // Port 25 is the default port used for relaying 
   // Port 465 should no longer be used at all
   // Port 2525 used when all other port is blocked
   auth: {
