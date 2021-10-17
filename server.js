@@ -14,8 +14,11 @@ const transporter = nodemailer.createTransport({
   // Port 465 should no longer be used at all
   // Port 2525 used when all other port is blocked
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASS
+    // user: process.env.EMAIL,
+    // pass: process.env.PASS
+
+      user: 'bassey.rhema@hotmail.com',
+      pass: 'V8fefer#r4'
   },
 });
 
@@ -43,7 +46,7 @@ app.post("/send", (req, res) => {
     // After parsing it, create a mail object with from, to, subject and text properties.
     const mail = {
       from: data.firstName + " " + data.lastName,
-      to: process.env.EMAIL,
+      to: 'bassey.rhema@hotmail.com',
       subject: data.subject,
       // text: `${data.firstName} <${data.email}> \n${data.message}`,
       html: `<p><b>First Name:</b> ${data.firstName}<p>
