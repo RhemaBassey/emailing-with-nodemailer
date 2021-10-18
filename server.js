@@ -6,6 +6,7 @@ require("dotenv").config();
 // instantiate an express app
 const app = express();
 
+// For hotmail, to enable it to be used as transporter go to the hotmail account, and change the POP settings to let devices and apps use POP
 const transporter = nodemailer.createTransport({
   host: "smtp.live.com", //email provider
   port: 587,
@@ -16,9 +17,8 @@ const transporter = nodemailer.createTransport({
   auth: {
     // user: process.env.EMAIL,
     // pass: process.env.PASS
-
-      user: 'bassey.rhema@hotmail.com',
-      pass: 'V8fefer#r4'
+    user: "bassey.rhema@hotmail.com",
+    pass: "V8fefer#r4"
   },
 });
 
@@ -45,8 +45,10 @@ app.post("/send", (req, res) => {
     //2. You can configure the object however you want
     // After parsing it, create a mail object with from, to, subject and text properties.
     const mail = {
-      from: data.firstName + " " + data.lastName,
-      to: 'bassey.rhema@hotmail.com',
+      from: `${data.firstName} ${data.lastName} <bassey.rhema@hotmail.com>`, //Essentially outlook/hotmail doesn't let you send email from a account you don't own. 
+      //So take the original user's email and put it in the body of the text then make the FROM to be your email TO your email.
+      to: "bassey.rhema@hotmail.com",
+      // to: process.env.EMAIL,
       subject: data.subject,
       // text: `${data.firstName} <${data.email}> \n${data.message}`,
       html: `<p><b>First Name:</b> ${data.firstName}<p>
@@ -62,7 +64,8 @@ app.post("/send", (req, res) => {
         console.log(err);
         res.status(500).send(err);
       } else {
-        res.status(200).send("Email successfully sent to recipient!");
+        res.status(200).send("Email successfully sent to recipient! You can close the tab.");
+        // res.status(200).json({status: 'success'})
       }
     });
   });
