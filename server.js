@@ -17,8 +17,8 @@ const transporter = nodemailer.createTransport({
   auth: {
     // user: process.env.EMAIL,
     // pass: process.env.PASS
-    user: 'bassey.rhema@hotmail.com',
-    pass: 'V8fefer#r4'
+    user: "bassey.rhema@hotmail.com",
+    pass: "V8fefer#r4"
   },
 });
 
