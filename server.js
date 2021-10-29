@@ -15,8 +15,10 @@ const transporter = nodemailer.createTransport({
   // Port 465 should no longer be used at all
   // Port 2525 used when all other port is blocked
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASS
+    // user: process.env.EMAIL,
+    // pass: process.env.PASS
+    user: 'bassey.rhema@hotmail.com',
+    pass: 'V8fefer#r4'
   },
 });
 
