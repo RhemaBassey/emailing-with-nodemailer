@@ -13,13 +13,21 @@
       crossorigin="anonymous"
     />
 
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
     <title>Contact Form</title>
   </head>
   <body>
     <h2 class="container" style="margin: 40px auto">Contact Form</h2>
 
-    <form
-      class="container"
+    <div class="container"><form
+      
       id="contact-form"
       method="POST"
       action="send"
@@ -98,9 +106,21 @@
         value="submit"
         class="btn btn-primary btn-lg btn-block"
       >
+      <i class="fas fa-envelope" style="padding-right: 10px;"></i>
         Send
       </button>
     </form>
+
+    <p style="text-align: center; padding-top: 30px;">
+      <a href="https://github.com/RhemaBassey/emailing-with-nodemailer"
+        style="text-decoration:none;"
+        target="_blank"><i class="fab fa-github fa-2x"></i> View Source Code</a
+      >
+    </p>
+  </div>
+    
+
+
 
     <script src="index.js"></script>
   </body>
